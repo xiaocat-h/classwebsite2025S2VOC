@@ -1,0 +1,22 @@
+/* media queries */
+@media screen and (max-width:480px) {
+    .nav-button {
+        display: block;
+    }
+
+    .logo {
+        max-width: 60px;
+        padding: 5px;
+    }
+
+    #categories {
+        order: 5;
+        flex-direction: column;
+        min-width: 100%;
+    }
+
+    .page-header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
