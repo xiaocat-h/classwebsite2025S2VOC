@@ -1,13 +1,14 @@
 body {
     background-color: rgb(204, 232, 207);
     color: rgb(0, 0, 0);
-    margin: 0px
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .logo {
     max-width: 100px;
     min-width: 60px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .page-header {
@@ -25,7 +26,7 @@ body {
     color: brown;
     text-decoration: none;
     padding: 15px;
-    font-size: 110%;
+    font-size: 120%;
 }
 
 .navigation {
@@ -37,3 +38,61 @@ body {
     border-color: transparent;
     display: none;
 }
+
+.banner {
+    background-color: #08090A;
+    color: #CCCCCC;
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h2 {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.banner button {
+    background-color: yellow;
+    padding: 0.8em;
+    min-width: 12em;
+    border: 1px white solid;
+    border-radius: 4pt;
+}
+
+.card-container {
+    display:flex;
+    flex-direction:row;
+    gap:1em;
+}
+
+.card img {
+    max-width: 100%;
+    aspect-ratio: 4/3;
+    object-fit:cover;
+    object-position: center;
+}
+
+.card-content {
+    padding: 1em;
+}
+
+.card{
+    border:1px solid #a4a4a4;
+    border-radius: 8pt;
+    overflow: hidden;
+}
+
+.card button {
+    min-width: 100%;
+    background-color: transparent;
+    padding: 0.5em;
+    border: 1px solid #666666;
+}
+
+.content {
+    margin: 3em 10em 3em 10em;
+}
+
