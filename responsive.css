@@ -1,5 +1,5 @@
 /* media queries */
-@media screen and (max-width:480px) {
+@media screen and (max-width:600px) {
     .nav-button {
         display: block;
     }
@@ -19,4 +19,27 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+    .banner h2 {
+        font-size: 2rem;
+    }
+    .banner {
+        min-height: 40vh;
+
+    }
+    .content {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    .social {
+        order: -1;
+        justify-content: center;
+        min-width: 100%;
+
+    }
+    .legal {
+        justify-content: center;
+    }
+    .footer {
+        min-height: 30vh;
+    } 
 }
