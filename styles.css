@@ -66,6 +66,7 @@ body {
     display:flex;
     flex-direction:row;
     gap:1em;
+    flex-wrap: wrap;
 }
 
 .card img {
@@ -83,6 +84,8 @@ body {
     border:1px solid #a4a4a4;
     border-radius: 8pt;
     overflow: hidden;
+    flex: 1;
+    min-width: 360px;
 }
 
 .card button {
@@ -96,3 +99,41 @@ body {
     margin: 3em 10em 3em 10em;
 }
 
+.banner2 {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background: linear-gradient( to bottom right, purple, pink);
+}
+
+.banner2 button {
+    background-color: transparent;
+}
+
+.footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: /*darker version of header banner*/;
+    min-height: 20vh;
+    padding: 1em;
+}
+
+.footer-menu{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-menu a, .legal a, .social a {
+    color:white;
+    text-decoration: none;
+}
+
+.legal {
+    min-width: 100%;
+}
