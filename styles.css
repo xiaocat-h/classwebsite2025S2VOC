@@ -66,16 +66,16 @@ body {
 }
 
 .card-container {
-    display:flex;
-    flex-direction:row;
-    gap:1em;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
     flex-wrap: wrap;
 }
 
 .card img {
     max-width: 100%;
     aspect-ratio: 4/3;
-    object-fit:cover;
+    object-fit: cover;
     object-position: center;
 }
 
@@ -83,8 +83,8 @@ body {
     padding: 1em;
 }
 
-.card{
-    border:1px solid #a4a4a4;
+.card {
+    border: 1px solid #a4a4a4;
     border-radius: 8pt;
     overflow: hidden;
     flex: 1;
@@ -111,9 +111,8 @@ body {
     padding: 2em;
     margin-top: 1em;
     margin-bottom: 1em;
-    background: linear-gradient( to bottom right, #B5AEDC, 
-#ebe9f2ec
-);
+    background: linear-gradient(to bottom right, #B5AEDC,
+            #ebe9f2ec);
 }
 
 .banner2 button {
@@ -130,13 +129,15 @@ body {
     padding: 1em;
 }
 
-.footer-menu{
+.footer-menu {
     display: flex;
     flex-direction: column;
 }
 
-.footer-menu a, .legal a, .social a {
-    color:white;
+.footer-menu a,
+.legal a,
+.social a {
+    color: white;
     text-decoration: none;
 }
 
@@ -164,7 +165,8 @@ body {
     gap: 5px;
 }
 
-#contact input, #contact textarea {
+#contact input,
+#contact textarea {
     margin-bottom: 1em;
     padding: 5px;
 }
@@ -175,7 +177,7 @@ body {
     justify-content: space-between;
 }
 
-.buttons > button {
+.buttons>button {
     min-width: 100px;
 }
 
@@ -183,3 +185,5 @@ body {
     width: 100%;
     aspect-ratio: 4/3;
 }
+
+/* below for testing */

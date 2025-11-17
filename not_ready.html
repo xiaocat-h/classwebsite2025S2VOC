@@ -1,0 +1,275 @@
+<style>
+    /* -------------------------------------------
+   内部样式：隔离的 404 动画样式
+   ------------------------------------------- */
+
+    /* CSS Reset (仅影响需要重置的元素) */
+    * {
+        border: 0;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 颜色变量和字体大小设置 */
+    :root {
+        /* 颜色定义 */
+        --light: #ffd84d;
+        /* 五官颜色 */
+        --dark: #000000;
+        /* 背景颜色 */
+        --hue: 223;
+        --sat: 10%;
+        --trans-dur: 0.3s;
+        color-scheme: light dark;
+        font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+    }
+
+    /* 布局和主题样式：只作用于动画容器本身 (避免破坏原有 body 布局) */
+    #four-zero-four {
+        /* 强制主题颜色 */
+        background-color: var(--dark);
+        color: var(--light);
+
+        /* 布局：占据全视口并居中内容 */
+        /* ✅ 使用和主页 body 样式完全相同的字体堆栈 */
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+        /* 确保行高保留 */
+        font-size: 1em;
+        /* 确保字体大小保留 */
+        display: grid;
+        place-items: center;
+        height: 100vh;
+
+        /* 过渡效果 */
+        transition:
+            background-color var(--trans-dur),
+            color var(--trans-dur);
+    }
+
+    /* main 样式 (只作用于 #four-zero-four 内部的 main) */
+    #four-zero-four main {
+        padding: 1.5em 0;
+    }
+
+    /* -------------------------------------------
+   动画元素样式 (已修正 Sass 嵌套和 animation 简写)
+   ------------------------------------------- */
+
+    .face {
+        display: block;
+        width: 12em;
+        height: auto;
+    }
+
+    .face__eyes,
+    .face__eye-lid,
+    .face__mouth-left,
+    .face__mouth-right,
+    .face__nose,
+    .face__pupil {
+        animation: eyes 1s 0.3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    }
+
+    .face__eye-lid,
+    .face__pupil {
+        animation-duration: 4s;
+        animation-delay: 1.3s;
+        animation-iteration-count: infinite;
+    }
+
+    .face__eye-lid {
+        animation-name: eye-lid;
+    }
+
+    .face__mouth-left,
+    .face__mouth-right {
+        animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+    }
+
+    .face__mouth-left {
+        animation-name: mouth-left;
+    }
+
+    .face__mouth-right {
+        animation-name: mouth-right;
+    }
+
+    .face__nose {
+        animation-name: nose;
+    }
+
+    .face__pupil {
+        animation-name: pupil;
+    }
+
+    /* -------------------------------------------
+   新增：Logo 和 “Take Me Home” 文本样式
+   ------------------------------------------- */
+
+    /* Logo 样式：继承主网站的 .logo 样式，但可能需要调整位置和颜色 */
+    #four-zero-four .logo {
+        /* 假设你的主网站的 .logo 已经定义了 max-width 等，这里可以覆盖或微调 */
+        max-width: 100px;
+        /* 保持 Logo 大小一致 */
+        min-width: 60px;
+        padding: 5px;
+        /* 确保 Logo 在动画容器内正确显示，可能需要调整 margin 或 display */
+        margin-bottom: 2em;
+        /* 与动画保持一定距离 */
+        z-index: 10;
+        /* 确保在动画之上 */
+    }
+
+    /* “Oops, take me home” 文本容器样式 */
+    .take-me-home-text {
+        font-size: 1.5em;
+        /* 适当放大文字 */
+        margin-top: 2em;
+        /* 与动画保持一定距离 */
+        text-align: center;
+        /* 强制颜色与五官颜色一致 */
+        color: var(--light);
+        /* 使用定义的亮色变量 */
+        z-index: 10;
+        /* 确保在动画之上 */
+    }
+
+    /* “take me home” 链接样式 */
+    .take-me-home-text a {
+        text-decoration: none;
+        /* 移除下划线 */
+        color: var(--light);
+        /* 强制链接颜色与五官颜色一致 */
+        font-weight: bold;
+        /* 加粗链接 */
+    }
+
+    /* -------------------------------------------
+   @keyframes 动画定义
+   ------------------------------------------- */
+
+    @keyframes eye-lid {
+
+        from,
+        40%,
+        45%,
+        to {
+            transform: translateY(0);
+        }
+
+        42.5% {
+            transform: translateY(17.5px);
+        }
+    }
+
+    @keyframes eyes {
+        from {
+            transform: translateY(112.5px);
+        }
+
+        to {
+            transform: translateY(15px);
+        }
+    }
+
+    @keyframes pupil {
+
+        from,
+        37.5%,
+        40%,
+        45%,
+        87.5%,
+        to {
+            stroke-dashoffset: 0;
+            transform: translate(0, 0);
+        }
+
+        12.5%,
+        25%,
+        62.5%,
+        75% {
+            stroke-dashoffset: 0;
+            transform: translate(-35px, 0);
+        }
+
+        42.5% {
+            stroke-dashoffset: 35;
+            transform: translate(0, 17.5px);
+        }
+    }
+
+    @keyframes mouth-left {
+
+        from,
+        50% {
+            stroke-dashoffset: -102;
+        }
+
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @keyframes mouth-right {
+
+        from,
+        50% {
+            stroke-dashoffset: 102;
+        }
+
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @keyframes nose {
+        from {
+            transform: translate(0, 0);
+        }
+
+        to {
+            transform: translate(0, 22.5px);
+        }
+    }
+</style>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="four-zero-four">
+        <!-- add logo -->
+        <a href="index.html">
+            <img class="logo" src="images/TipToe Soles_Logo_colour.png" alt="Your Company Logo">
+        </a>
+
+        <main>
+            <svg class="face" viewBox="0 0 320 380" width="320px" height="380px"
+                aria-label="A 404 becomes a face, looks to the sides, and blinks. The 4s slide up, the 0 slides down, and then a mouth appears.">
+                <g fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="25">
+                    <g class="face__eyes" transform="translate(0, 112.5)">
+                        <g transform="translate(15, 0)">
+                            <polyline class="face__eye-lid" points="37,0 0,120 75,120" />
+                            <polyline class="face__pupil" points="55,120 55,155" stroke-dasharray="35 35" />
+                        </g>
+                        <g transform="translate(230, 0)">
+                            <polyline class="face__eye-lid" points="37,0 0,120 75,120" />
+                            <polyline class="face__pupil" points="55,120 55,155" stroke-dasharray="35 35" />
+                        </g>
+                    </g>
+                    <rect class="face__nose" rx="4" ry="4" x="132.5" y="112.5" width="55" height="155" />
+                    <g stroke-dasharray="102 102" transform="translate(65, 334)">
+                        <path class="face__mouth-left" d="M 0 30 C 0 30 40 0 95 0" stroke-dashoffset="-102" />
+                        <path class="face__mouth-right" d="M 95 0 C 150 0 190 30 190 30" stroke-dashoffset="102" />
+                    </g>
+                </g>
+            </svg>
+        </main>
+        <p class="take-me-home-text">
+            Oops, <a href="index.html">take me home</a>
+        </p>
+    </div>
+</body>
