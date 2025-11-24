@@ -149,6 +149,10 @@ nav a:hover {
     text-decoration: none;
 }
 
+.social a {
+    font-size: 1.6em;
+}
+
 .legal {
     min-width: 100%;
     align-self: flex-end;
