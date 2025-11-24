@@ -36,6 +36,10 @@ body {
     display: flex;
 }
 
+nav a:hover {
+    font-weight: bold;
+}
+
 .nav-button {
     background-color: transparent;
     border-color: transparent;
@@ -83,6 +87,10 @@ body {
     padding: 1em;
 }
 
+.card-content p {
+    text-align: justify;
+}
+
 .card {
     border: 1px solid #a4a4a4;
     border-radius: 8pt;
@@ -124,7 +132,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    background-color: #f5c208;
+    background-color: #edbc0be5;
     min-height: 20vh;
     padding: 1em;
 }
@@ -186,4 +194,18 @@ body {
     aspect-ratio: 4/3;
 }
 
-/* below for testing */
+.breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    gap: 10px;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: #08090A;
+}
+
+.breadcrumbs .active {
+    font-weight: bold;
+}
